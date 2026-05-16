@@ -32,9 +32,8 @@ export default function CartSummary({ cartTotal, cartCount, isSelectionEmpty, on
                     onClick={onCheckout}
                     disabled={isSelectionEmpty}
                     className={`mt-6 w-full py-3 rounded-full flex items-center justify-center gap-2 font-medium shadow-sm transition-all duration-300 ${
-                        isSelectionEmpty 
                         ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                        : 'bg-[#FFB6C1] text-white hover:scale-105'
+                        : 'bg-[#FFB6C1] text-white hover:bg-[#F0A2B0] hover:scale-105'
                     }`}
                 >
                     THANH TOÁN 

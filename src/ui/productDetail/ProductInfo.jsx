@@ -99,7 +99,7 @@ export default function ProductInfo({ product, onAddToCart }) {
                 </div>
                 <button 
                     onClick={handleAddToCart}
-                    className="flex-1 bg-[#FFB6C1] text-white py-3 rounded-full hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 font-medium shadow-sm"
+                    className="flex-1 bg-[#FFB6C1] text-white py-3 rounded-full hover:bg-[#F0A2B0] transition-all flex items-center justify-center gap-2 font-medium shadow-sm"
                 >
                     <ShoppingCart className="w-5 h-5" />
                     Thêm vào giỏ hàng

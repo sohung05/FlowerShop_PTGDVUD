@@ -80,7 +80,7 @@ export default function CheckoutSummary({ cart, cartTotal, shippingFee, finalTot
                 type="submit"
                 form="checkout-form"
                 disabled={isSubmitting}
-                className={`mt-6 w-full bg-[#FFB6C1] text-white py-3.5 rounded-full transition-transform duration-300 flex items-center justify-center font-medium shadow-sm ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105'}`}
+                className={`mt-6 w-full bg-[#FFB6C1] text-white py-3.5 rounded-full transition-all duration-300 flex items-center justify-center font-medium shadow-sm ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#F0A2B0] hover:scale-105'}`}
             >
                 {isSubmitting ? 'ĐANG XỬ LÝ...' : 'ĐẶT HÀNG NGAY'}
             </button>
