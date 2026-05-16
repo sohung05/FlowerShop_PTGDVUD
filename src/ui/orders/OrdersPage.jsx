@@ -31,7 +31,7 @@ export default function OrdersPage() {
                 // 1. Fetch real orders from API
                 if (user) {
                     const userId = user._id || user.id;
-                    const response = await fetch(`http://localhost:5000/api/orders/myorders/${userId}`);
+                    const response = await fetch(`/api/orders/myorders/${userId}`);
                     const data = await response.json();
                     
                     // Chuẩn hóa dữ liệu để phù hợp với OrderCard (ví dụ: totalAmount -> total)
@@ -52,7 +52,7 @@ export default function OrdersPage() {
                 // 2. Fetch reviewed order IDs from API
                 if (user) {
                     const userId = user._id || user.id;
-                    const response = await fetch(`http://localhost:5000/api/reviews/user/${userId}`);
+                    const response = await fetch(`/api/reviews/user/${userId}`);
                     const reviewedIds = await response.json();
                     setReviewedOrders(reviewedIds);
                 }

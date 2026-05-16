@@ -11,7 +11,7 @@ export default function AdminReviews() {
     const fetchReviews = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/reviews');
+            const response = await fetch('/api/reviews');
             const data = await response.json();
             setReviews(data);
         } catch (error) {
@@ -28,7 +28,7 @@ export default function AdminReviews() {
     const handleDelete = async (id) => {
         if (window.confirm("Bạn có chắc chắn muốn xóa đánh giá này không?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/reviews/${id}`, { method: 'DELETE' });
+                const response = await fetch(`/api/reviews/${id}`, { method: 'DELETE' });
                 if (response.ok) {
                     toast.success("Đã xóa đánh giá thành công!");
                     fetchReviews();

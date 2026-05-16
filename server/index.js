@@ -45,10 +45,16 @@ const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
-        app.listen(PORT, () => {
-            console.log(`Server is running on port: ${PORT}`);
-        });
     })
     .catch((err) => {
         console.error('Database connection error:', err);
     });
+
+// Chỉ chạy app.listen khi ở môi trường localhost (để không lỗi trên Vercel)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port: ${PORT}`);
+    });
+}
+
+export default app;

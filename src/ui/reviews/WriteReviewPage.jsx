@@ -69,7 +69,7 @@ export default function WriteReviewPage() {
                 avatarBg: "#" + Math.floor(Math.random()*16777215).toString(16) // Màu ngẫu nhiên cho avatar
             };
 
-            const response = await fetch('http://localhost:5000/api/reviews', {
+            const response = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(reviewData)

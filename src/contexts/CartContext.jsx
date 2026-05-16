@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
                 console.log("Dòng 24 - Đang lấy giỏ hàng từ Server cho User:", user._id || user.id);
                 try {
                     const userId = user._id || user.id;
-                    const response = await fetch(`http://localhost:5000/api/cart/${userId}`);
+                    const response = await fetch(`/api/cart/${userId}`);
                     const data = await response.json();
                     if (response.ok && data.items) {
                         console.log("Dòng 30 - Đã lấy được giỏ hàng từ Server:", data.items);
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
                 console.log("Dòng 45 - Đang lưu giỏ hàng lên Server...", cart);
                 try {
                     const userId = user._id || user.id;
-                    const response = await fetch('http://localhost:5000/api/cart', {
+                    const response = await fetch('/api/cart', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ userId, items: cart })
@@ -106,7 +106,7 @@ export const CartProvider = ({ children }) => {
         if (user) {
             try {
                 const userId = user._id || user.id;
-                await fetch(`http://localhost:5000/api/cart/${userId}`, { method: 'DELETE' });
+                await fetch(`/api/cart/${userId}`, { method: 'DELETE' });
             } catch (error) {
                 console.error("Lỗi khi xóa giỏ hàng trên Server:", error);
             }

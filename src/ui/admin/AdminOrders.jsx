@@ -24,7 +24,7 @@ export default function AdminOrders() {
     const fetchOrders = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/orders');
+            const response = await fetch('/api/orders');
             const data = await response.json();
             setOrders(data);
         } catch (error) {
@@ -42,7 +42,7 @@ export default function AdminOrders() {
     // Cập nhật trạng thái đơn hàng
     const handleUpdateStatus = async (orderId, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
+            const response = await fetch(`/api/orders/${orderId}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })

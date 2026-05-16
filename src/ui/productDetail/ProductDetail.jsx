@@ -21,7 +21,7 @@ export default function ProductDetail() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`);
+                const response = await fetch(`/api/products/${id}`);
                 const data = await response.json();
                 setProduct(data);
             } catch (error) {
@@ -37,7 +37,7 @@ export default function ProductDetail() {
     const [relatedProducts, setRelatedProducts] = useState([]);
     useEffect(() => {
         if (product) {
-            fetch('http://localhost:5000/api/products')
+            fetch('/api/products')
                 .then(res => res.json())
                 .then(data => {
                     const related = data

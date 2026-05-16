@@ -21,7 +21,7 @@ export default function AdminLayout() {
     React.useEffect(() => {
         const fetchPendingCount = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/orders');
+                const response = await fetch('/api/orders');
                 const data = await response.json();
                 const count = data.filter(o => o.status === 'Chờ xác nhận').length;
                 setPendingCount(count);

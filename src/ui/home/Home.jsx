@@ -10,7 +10,7 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('/api/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.slice(0, 4));

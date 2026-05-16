@@ -16,7 +16,7 @@ export default function OrderDetail() {
         const fetchOrder = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch(`http://localhost:5000/api/orders/${id}`);
+                const response = await fetch(`/api/orders/${id}`);
                 const data = await response.json();
                 
                 if (response.ok) {
@@ -67,7 +67,7 @@ export default function OrderDetail() {
         if (!window.confirm("Bạn có chắc chắn muốn hủy đơn hàng này không?")) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/orders/${order.id}/status`, {
+            const response = await fetch(`/api/orders/${order.id}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: 'Đã hủy' })

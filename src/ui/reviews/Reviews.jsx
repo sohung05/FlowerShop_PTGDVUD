@@ -13,7 +13,7 @@ export default function Reviews() {
     useEffect(() => {
         const fetchReviews = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/reviews');
+                const response = await fetch('/api/reviews');
                 const data = await response.json();
                 setAllReviews(data);
             } catch (error) {

@@ -23,7 +23,7 @@ export default function AdminProducts() {
     const fetchProducts = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/products');
+            const response = await fetch('/api/products');
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -62,8 +62,8 @@ export default function AdminProducts() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const url = editingProduct 
-            ? `http://localhost:5000/api/products/${editingProduct._id}` 
-            : 'http://localhost:5000/api/products';
+            ? `/api/products/${editingProduct._id}` 
+            : '/api/products';
         const method = editingProduct ? 'PUT' : 'POST';
 
         try {
@@ -85,7 +85,7 @@ export default function AdminProducts() {
     const handleDelete = async (id) => {
         if (window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`, { method: 'DELETE' });
+                const response = await fetch(`/api/products/${id}`, { method: 'DELETE' });
                 if (response.ok) {
                     toast.success("Đã xóa sản phẩm thành công!");
                     fetchProducts();
