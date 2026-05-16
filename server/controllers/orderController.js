@@ -18,7 +18,7 @@ export const createOrder = async (req, res) => {
             shippingAddress,
             phone,
             paymentMethod,
-            status: 'Đang xử lý'
+            status: 'Chờ xác nhận'
         });
 
         const createdOrder = await order.save();
