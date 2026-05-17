@@ -27,6 +27,7 @@ import AdminOrders from "./ui/admin/AdminOrders";
 import AdminProducts from "./ui/admin/AdminProducts";
 import AdminReviews from "./ui/admin/AdminReviews";
 import AdminProfile from "./ui/admin/AdminProfile";
+import ScrollToTop from "./ui/shared/ScrollToTop";
 
 const ProtectedRoute = ({ children }) => {
     const { user, loading } = useAuth();
@@ -86,6 +87,7 @@ function App() {
       <CartProvider>
         <WishlistProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <HotToaster />
             <AppContent />
           </BrowserRouter>

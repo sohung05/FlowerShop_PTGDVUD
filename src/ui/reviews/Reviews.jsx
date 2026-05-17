@@ -51,7 +51,7 @@ export default function Reviews() {
         else if (activeTab === '3star') result = result.filter(r => r.rating === 3);
         else if (activeTab === '2star') result = result.filter(r => r.rating === 2);
         else if (activeTab === '1star') result = result.filter(r => r.rating === 1);
-        else if (activeTab === 'withImage') result = result.filter(r => r.hasImage);
+        else if (activeTab === 'withImage') result = result.filter(r => r.image && r.image !== "");
 
         // Sắp xếp
         if (sortBy === 'newest') {

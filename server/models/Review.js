@@ -10,9 +10,14 @@ const reviewSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    userName: {
+    name: {
         type: String,
-        required: true
+        required: true,
+        alias: 'userName'
+    },
+    orderId: {
+        type: String,
+        required: false
     },
     rating: {
         type: Number,
@@ -20,13 +25,22 @@ const reviewSchema = new mongoose.Schema({
         min: 1,
         max: 5
     },
-    comment: {
+    content: {
         type: String,
-        required: true
+        required: true,
+        alias: 'comment'
     },
     image: {
         type: String, // Lưu link ảnh (Cloudinary hoặc base64)
         default: ""
+    },
+    avatarLetter: {
+        type: String,
+        default: "K"
+    },
+    avatarBg: {
+        type: String,
+        default: "#8C5D5D"
     },
     createdAt: {
         type: Date,
